@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Gracias por visitarnos. Lea a continuación para obtener más información sobre mí y mis antecedentes".
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/rene-Photoroom.png"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Lugar de Trabajo</h2>
+				<div class="content">
+					<p>
+						Con ocho años de experiencia en Cospec Ltd, has demostrado ser un pilar fundamental en el área de telecomunicaciones, especializándote en telefonía, internet y televisión. Tu habilidad para trabajar con cableado multipar, cambiar cajas de telefonía, realizar fusiones de fibra óptica, y montar servidores de fibra y centrales telefónicas muestra tu versatilidad y conocimiento técnico. Además, tu competencia como gruista y tu trabajo con tensión eléctrica subrayan tu adaptabilidad y compromiso con la seguridad y eficiencia. Tu configuración y mantenimiento general aseguran la conectividad y satisfacción del cliente.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Educación</h2>
+				<div class="content">
+					<p>Primaria Completa , secundaria, universidad </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Habilidades</h2>
+				<div class="content">
+					<p>
+						Experto en Telecomunicaciones:  Con ocho años de experiencia en Cospec Ltd, has demostrado ser un profesional sólido en el campo de las telecomunicaciones. Tu experiencia abarca áreas como telefonía, internet y televisión, lo que indica un conocimiento profundo de los sistemas de comunicación modernos.
+					</p>
+                    <br>
+                    <p> 
+						Versatilidad Técnica: Tu habilidad para trabajar con una variedad de tecnologías y equipos, como el cableado multipar, la fusión de fibra óptica y el montaje de servidores de fibra, muestra una versatilidad técnica impresionante. Esta capacidad te permite adaptarte a diferentes entornos y desafíos tecnológicos.
+					</p>
+                    <br>
+					<p> 	
+						Compromiso con la Seguridad y Eficiencia: Tu experiencia como gruista y tu trabajo con tensión eléctrica subrayan tu compromiso con la seguridad en el lugar de trabajo. Además, tu enfoque en la configuración y mantenimiento general de equipos asegura la eficiencia operativa y la satisfacción del cliente.
+					</p>
+					<br>
+					<p> 	
+						Resolución de Problemas: Tu capacidad para enfrentar y resolver problemas técnicos complejos es evidente en tu historial laboral. Ya sea diagnosticando problemas de red o implementando soluciones para mejorar la conectividad, demuestras habilidades sólidas en la resolución de problemas.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
